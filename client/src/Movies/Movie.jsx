@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
+import Button from '@material-ui/core/Button';
+
 export default class Movie extends React.Component {
   constructor(props) {
     super(props);
@@ -38,10 +40,11 @@ export default class Movie extends React.Component {
 
     return (
       <div className="save-wrapper">
-        <MovieCard movie={this.state.movie} />
-        <div className="save-button" onClick={this.saveMovie}>
+        <Button variant="contained" onClick={this.saveMovie}>
           Save
-        </div>
+        </Button>
+        <MovieCard movie={this.state.movie} />
+
       </div>
     );
   }
