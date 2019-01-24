@@ -82,5 +82,11 @@ a:-webkit-any-link {
 }
 h6 .home{
   color: white;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+div header .navbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

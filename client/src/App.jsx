@@ -37,7 +37,7 @@ export default class App extends Component {
 		return (
 			<div>
 				<AppBar position="sticky">
-					<Toolbar>
+					<Toolbar className='navbar'>
 						<Typography variant="h6" color="inherit">
 							<Link className="home" to="/">
 								Home
