@@ -23,7 +23,7 @@ export default class Movie extends React.Component {
 
   fetchMovie = id => {
     console.log(id)
-    axios.get(`http://localhost:5000/api/movies/${id}`)
+    axios.get(`/api/movies/${id}`)
     .then(res => this.setState({ movie: res.data }))
     .catch(err => console.log(err))
   };

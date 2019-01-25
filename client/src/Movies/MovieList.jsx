@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import MovieCard from './MovieCard';
 
-const baseUrl = 'http://localhost:5000'
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -14,7 +13,7 @@ export default class MovieList extends Component {
   }
 
   componentDidMount() {
-    axios.get(`${baseUrl}/api/movies`)
+    axios.get(`/api/movies`)
     .then(res => {
       this.setState({
         movies: res.data
