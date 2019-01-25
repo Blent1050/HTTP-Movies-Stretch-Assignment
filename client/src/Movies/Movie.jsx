@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
+import Button from '@material-ui/core/Button';
+
 export default class Movie extends React.Component {
   constructor(props) {
     super(props);
@@ -20,8 +22,10 @@ export default class Movie extends React.Component {
   }
 
   fetchMovie = id => {
-    // this function needs to fire off a get request to localhost:5000/api/movies/:id
-    // note that the id is dynamic.
+    console.log(id)
+    axios.get(`/api/movies/${id}`)
+    .then(res => this.setState({ movie: res.data }))
+    .catch(err => console.log(err))
   };
 
   saveMovie = () => {
@@ -36,10 +40,11 @@ export default class Movie extends React.Component {
 
     return (
       <div className="save-wrapper">
-        <MovieCard movie={this.state.movie} />
-        <div className="save-button" onClick={this.saveMovie}>
+        <Button variant="contained" onClick={this.saveMovie}>
           Save
-        </div>
+        </Button>
+        <MovieCard movie={this.state.movie} />
+
       </div>
     );
   }
