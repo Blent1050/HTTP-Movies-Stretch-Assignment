@@ -29,7 +29,7 @@ export default class Movie extends React.Component {
   };
 
   saveMovie = () => {
-    const addToSavedList = this.props.addToSavedList;
+    const addToSavedList = this.props.addToSavedList(this.props.movie);
     addToSavedList(this.state.movie);
   };
 
