@@ -28,10 +28,6 @@ export default class App extends Component {
 		savedList.push(movie);
 		this.setState({ savedList });
 	};
-
-		
-
-
     
 	render() {
 		return (
@@ -43,7 +39,6 @@ export default class App extends Component {
 								Home
 							</Link>
 						</Typography>
-						<Button color="inherit" />
 					</Toolbar>
 				</AppBar>
 				<Route exact path="/" component={MovieList} />
