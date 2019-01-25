@@ -18,12 +18,14 @@ export default class App extends Component {
     
 	}
 
-	addToSavedList = (movie) => {
-		console.log(this.state.savedList);
+	addToSavedList = movie => {
 		const savedList = this.state.savedList;
-		savedList.push(movie);
-		this.setState({ savedList });
-	};
+		const movieTitles = savedList.map(item => item.title)
+		if (!movieTitles.includes(movie.title)) {
+		  savedList.push(movie)
+		  this.setState({ savedList });
+		}
+	  };
     
 	render() {
 		return (
